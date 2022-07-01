@@ -8,11 +8,10 @@ import Container from "@material-ui/core/Container";
 import React from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import { Paper, CardActionArea, CardMedia, Grid, TableContainer, Table, TableBody, TableHead, TableRow, TableCell } from "@material-ui/core";
+import { Paper, CardActionArea, CardMedia, Grid, TableContainer, Table, TableBody, TableHead, TableRow, TableCell, Button } from "@material-ui/core";
 import cblogo from "./cblogoo.PNG";
 import image from "./bg.png";
 import { DropzoneArea } from 'material-ui-dropzone';
-
 
 
 
@@ -184,7 +183,7 @@ export const ImageUpload = () => {
       <AppBar position="static" className={classes.appbar}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            Rice Plant Nutrient Defeciency Classification
+            Cassava leaf Disease Classification
           </Typography>
           <div className={classes.grow} />
           <Avatar src={(cblogo)}></Avatar>
@@ -213,7 +212,7 @@ export const ImageUpload = () => {
               {!image && <CardContent className={classes.content}>
                 <DropzoneArea
                   acceptedFiles={['image/*']}
-                  dropzoneText={"Drag and drop an image of a potato plant leaf to process"}
+                  dropzoneText={"Drag and drop an image of a Cassava plant leaf to process"}
                   onChange={onSelectFile}
                 />
               </CardContent>}
@@ -239,6 +238,7 @@ export const ImageUpload = () => {
               </CardContent>}
             </Card>
           </Grid>
+              <Button variant = "contained" color = "secondary" onClick={() => {window.location.reload();}}>Predict Again</Button>
         </Grid>
       </Container>
     </React.Fragment>
